@@ -1,0 +1,23 @@
+{
+  "name": "bomba-caliente",
+  "description": "Papa caliente online para 2 a 8 personas. Phaser 3 + PartyKit.",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "server": "cd server && npx partykit dev",
+    "build": "vite build",
+    "test": "node --test tests/server.test.mjs",
+    "preview": "vite preview",
+    "build:server": "node server/build.mjs",
+    "host": "node server/build.mjs && node server/host.mjs"
+  },
+  "dependencies": {
+    "partysocket": "^1.1.18",
+    "phaser": "^3.90.0"
+  },
+  "devDependencies": {
+    "vite": "^7.3.1"
+  }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💣</text></svg>">
+  <title>Bomba Caliente · Dibujá tu personaje</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <div id="game"></div>
+  <div id="overlay">
+    <form class="creator" id="join">
+      <header class="creator-header">
+        <span class="brand">💣 BOMBA CALIENTE</span>
+        <span class="step">PRIMER PASO · TU PERSONAJE</span>
+        <h1>Una esfera. Tu carita.</h1>
+        <p>Los ojitos se mueven solos. Dibujá nariz, boca y toda su personalidad.</p>
+      </header>
+      <div class="creator-grid">
+        <section class="drawing-area" aria-label="Dibujo de tu personaje">
+          <canvas id="face-editor" width="512" height="512" aria-label="Dibujá la cara de tu esfera con el mouse o el dedo"></canvas>
+          <p id="editor-note">Los ojos ya están. Dibujá nariz, boca y lo que quieras.</p>
+          <div class="drawing-tools">
+            <label for="brush">Trazo</label>
+            <select id="brush" aria-label="Grosor del trazo"><option value="20">Fino</option><option value="40" selected>Medio</option><option value="65">Grueso</option></select>
+            <button type="button" id="undo" class="secondary">↶ Deshacer</button>
+            <button type="button" id="clear-face" class="secondary">Borrar</button>
+          </div>
+          <div class="rules">
+            <strong>5 rondas. Todos hasta el final.</strong>
+            <p>Pasá la bomba tocando a otro. Si no te explota, sumás 1 punto. ¡Nadie queda afuera!</p>
+            <p>Gana quien más puntos tenga. En empate, quien tuvo menos tiempo la bomba.</p>
+          </div>
+        </section>
+        <section class="creator-options" aria-label="Color y nombre">
+          <label class="field-label" for="name">¿CÓMO TE LLAMÁS?</label>
+          <input id="name" maxlength="16" placeholder="Tu nombre" aria-label="Tu nombre" autocomplete="off" />
+          <p class="field-label">ELEGÍ EL COLOR DE TU ESFERA</p>
+          <div id="colors" role="group" aria-label="Color del personaje"></div>
+          <p class="field-label">PELO, GORRA O SOMBRERO</p>
+          <div id="head-options" role="group" aria-label="Estilo de pelo o accesorio"></div>
+          <p class="field-label">COLOR DEL PELO O ACCESORIO</p>
+          <div id="hair-colors" role="group" aria-label="Color del pelo o accesorio"></div>
+          <button type="submit" id="ready">GUARDAR Y ESTOY LISTO</button>
+          <p id="join-status" role="status" aria-live="polite">Tu dibujo se guarda y todos lo ven en la sala.</p>
+          <p class="sala">Sala: <b id="sala"></b> · 2 a 8 jugadores</p>
+        </section>
+      </div>
+      <footer>WASD / flechas: moverse · ESPACIO: impulso · 1–6: burlas · M: silencio<br>En celular: control y botón táctiles. Jugá en horizontal.</footer>
+    </form>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
